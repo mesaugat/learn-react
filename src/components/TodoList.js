@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import InputBox from './InputBox';
 import TodoItem from './TodoItem';
@@ -27,6 +28,10 @@ const TodoList = (props) => {
       <TodoCount count={count} />
     </div>
   )
+}
+
+TodoList.propTypes = {
+  items: PropTypes.array
 }
 
 export default TodoList;

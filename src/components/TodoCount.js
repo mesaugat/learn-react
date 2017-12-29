@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Component to display number of todos.
@@ -16,6 +17,10 @@ const TodoCount = (props) => {
       {count === 1 ? ' item' : ' items'}
     </div>
   );
+}
+
+TodoCount.propTypes = {
+  count: PropTypes.number
 }
 
 export default TodoCount;

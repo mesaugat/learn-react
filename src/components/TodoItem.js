@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Each todo item.
@@ -17,6 +18,10 @@ const TodoItem = (props) => {
       </div>
     </li>
   )
+}
+
+TodoItem.propTypes = {
+  item: PropTypes.object
 }
 
 export default TodoItem;
