@@ -1,4 +1,6 @@
 import React from 'react';
+
+import InputBox from './InputBox';
 import TodoItem from './TodoItem';
 import TodoCount from './TodoCount';
 
@@ -14,6 +16,7 @@ const TodoList = (props) => {
   return (
     <div className="todolist">
       <h1>Todos</h1>
+      <InputBox />
       <ul className="list-unstyled">
         {
           items && items.map(item =>
