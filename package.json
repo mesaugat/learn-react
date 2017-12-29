@@ -2,15 +2,19 @@
   "name": "learn-react",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://mesaugat.github.io/learn-react",
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "^3.3.7",
+    "gh-pages": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
