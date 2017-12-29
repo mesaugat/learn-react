@@ -17,7 +17,7 @@ const TodoList = (props) => {
   return (
     <div className="todolist">
       <h1>Todos</h1>
-      <InputBox />
+      <InputBox {...props} />
       <ul className="list-unstyled">
         {
           items && items.map(item =>

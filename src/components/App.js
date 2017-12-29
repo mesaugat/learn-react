@@ -26,11 +26,28 @@ class App extends Component {
     ]
   };
 
+  /**
+   * Add a new todo to state items.
+   *
+   * @param {String} text
+   */
+  addNewTodo = (text) => {
+    this.setState(state => {
+      const todo = {
+        text,
+        completed: false,
+        id: state.length + 1
+      };
+
+      return {items: [...state.items, todo]};
+    })
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
-          <TodoList items={this.state.items} />
+          <TodoList items={this.state.items} addNewTodo={this.addNewTodo} />
         </div>
       </div>
     );
