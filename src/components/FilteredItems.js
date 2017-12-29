@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TodoItem from './TodoItem';
 
@@ -25,6 +26,11 @@ const FilteredItems = (props) => {
       }
     </ul>
   )
+}
+
+FilteredItems.propTypes = {
+  items: PropTypes.array.isRequired,
+  changeTodoStatus: PropTypes.func.isRequired
 }
 
 export default FilteredItems;

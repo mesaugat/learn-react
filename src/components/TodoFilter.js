@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const FILTER_ALL = 'all';
 export const FILTER_ACTIVE = 'active';
@@ -10,6 +11,11 @@ const options = {
   [FILTER_COMPLETED]: 'Completed'
 };
 
+/**
+ * Component to filter list of todos by it's status.
+ *
+ * @param {Object} props
+ */
 const TodoFilter = (props) => {
   const { filter, changeFilter } = props;
   const className = (key) => (key === filter ? 'selected' : '');
@@ -25,6 +31,11 @@ const TodoFilter = (props) => {
       ))}
     </ul>
   )
+}
+
+TodoFilter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  changeFilter: PropTypes.func.isRequired
 }
 
 export default TodoFilter;
