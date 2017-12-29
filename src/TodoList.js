@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoItem from './TodoItem';
 
 /**
  * Component to show list of todos.
@@ -14,13 +15,7 @@ const TodoList = (props) => {
       <ul className="list-unstyled">
         {
           items && items.map(item =>
-            <li key={item.id} className="ui-state-default">
-              <div className="checkbox">
-                <label>
-                  <input type="checkbox" checked={item.completed}/>{item.text}
-                </label>
-              </div>
-            </li>
+            <TodoItem key={item.id} item={item} />
           )
         }
       </ul>

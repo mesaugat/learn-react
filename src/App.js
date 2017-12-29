@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoList from './TodoList.js';
+import TodoList from './TodoList';
 
 /**
  * App component.
