@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import TodoList from './TodoList';
 import { FILTER_ALL, FILTER_ACTIVE, FILTER_COMPLETED } from './TodoFilter';
@@ -9,34 +10,28 @@ import { FILTER_ALL, FILTER_ACTIVE, FILTER_COMPLETED } from './TodoFilter';
 class App extends Component {
    state = {
     filter: FILTER_ALL,
-    items: [
-      {
-        id: 1,
-        text: 'Take out the trash',
-        completed: false
-      },
-      {
-        id: 2,
-        text: 'Buy bread',
-        completed: false
-      },
-      {
-        id: 3,
-        text: 'Teach penguins to fly',
-        completed: true
-      }
-    ]
+    items: []
   };
+
+  /**
+   * Make HTTP requests inside component did mount lifecycle method.
+   */
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+      .then(response => {
+        this.setState({ items: response.data })
+      })
+  }
 
   /**
    * Add a new todo to state items.
    *
-   * @param {String} text
+   * @param {String} title
    */
-  addNewTodo = (text) => {
+  addNewTodo = (title) => {
     this.setState(state => {
       const todo = {
-        text,
+        title,
         completed: false,
         id: state.items.length + 1
       };

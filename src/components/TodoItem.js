@@ -22,7 +22,7 @@ class TodoItem extends Component {
       <li key={item.id} className={className}>
         <div className="checkbox">
           <label>
-            <input type="checkbox" onChange={this.handleChange} checked={item.completed} /> {item.text}
+            <input type="checkbox" onChange={this.handleChange} checked={item.completed} /> {item.title}
           </label>
         </div>
       </li>
