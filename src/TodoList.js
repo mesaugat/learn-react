@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import TodoCount from './TodoCount';
 
 /**
  * Component to show list of todos.
@@ -7,7 +8,8 @@ import TodoItem from './TodoItem';
  * @param {Object} props
  */
 const TodoList = (props) => {
-  const {items} = props
+  const {items} = props;
+  const count = items.length;
 
   return (
     <div className="todolist">
@@ -19,6 +21,7 @@ const TodoList = (props) => {
           )
         }
       </ul>
+      <TodoCount count={count} />
     </div>
   )
 }
