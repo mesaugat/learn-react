@@ -19,7 +19,7 @@ const TodoList = (props) => {
 
   return (
     <div className="todolist">
-      <h1>Todos</h1>
+      <h1>My Todo List</h1>
       <InputBox {...{addNewTodo}} />
       <FilteredItems {...{items, changeTodoStatus}} />
       <footer className="clearfix">

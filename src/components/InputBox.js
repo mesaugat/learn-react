@@ -24,9 +24,9 @@ class InputBox extends Component {
    * Add a note when 'Enter' key is pressed.
    */
   handleKeyUp = (event) => {
-    const value = event.target.value;
+    const value = event.target.value.trim();
 
-    if (event.keyCode === 13 && value) {
+    if (event.keyCode === 13 && value !== '') {
       this.props.addNewTodo(value);
 
       this.setState({value: ''});
