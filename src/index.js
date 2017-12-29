@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from './components/App';
 
 // Add boostrap css
 import 'bootstrap/dist/css/bootstrap.css';
