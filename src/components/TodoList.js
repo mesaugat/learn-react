@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import InputBox from './InputBox';
-import TodoItem from './TodoItem';
 import TodoCount from './TodoCount';
+import TodoFilter from './TodoFilter';
+import FilteredItems from './FilteredItems';
 
 /**
  * Component to show list of todos.
@@ -11,27 +12,30 @@ import TodoCount from './TodoCount';
  * @param {Object} props
  */
 const TodoList = (props) => {
-  const { items } = props;
+  const { filter, addNewTodo, filterTodos, changeFilter, changeTodoStatus } = props;
+
+  const items = filterTodos(filter);
   const count = items.length;
 
   return (
     <div className="todolist">
       <h1>Todos</h1>
-      <InputBox {...props} />
-      <ul className="list-unstyled">
-        {
-          items && items.map(item =>
-            <TodoItem key={item.id} item={item} changeTodoStatus={props.changeTodoStatus} />
-          )
-        }
-      </ul>
-      <TodoCount count={count} />
+      <InputBox {...{addNewTodo}} />
+      <FilteredItems {...{items, changeTodoStatus}} />
+      <footer className="clearfix">
+        <TodoCount count={count} />
+        <div className="pull-right">
+          <TodoFilter {...{filter, changeFilter}} />
+        </div>
+      </footer>
     </div>
   )
 }
 
 TodoList.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array.isRequired,
+  filterTodos: PropTypes.func.isRequired,
+  changeTodoStatus: PropTypes.func.isRequired
 }
 
 export default TodoList;

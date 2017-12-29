@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
  */
 class InputBox extends Component {
   static propTypes = {
-    items: PropTypes.array,
     addNewTodo: PropTypes.func.isRequired
   }
 

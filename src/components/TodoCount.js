@@ -10,7 +10,7 @@ const TodoCount = (props) => {
   const {count} = props;
 
   return (
-    <div className="todo-footer">
+    <div className="pull-left">
       <strong>
         <span className="count-todos">{count}</span>
       </strong>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import TodoList from './TodoList';
+import { FILTER_ALL, FILTER_ACTIVE, FILTER_COMPLETED } from './TodoFilter';
 
 /**
  * App component.
  */
 class App extends Component {
    state = {
+    filter: FILTER_ALL,
     items: [
       {
         id: 1,
@@ -63,11 +65,48 @@ class App extends Component {
     })
   }
 
+  /**
+   * Filter todos by completion status.
+   *
+   * @param {String} status
+   * @returns {Object}
+   */
+  filterTodos = (status) => {
+    const { items } = this.state;
+
+    switch (status) {
+      case FILTER_COMPLETED:
+        return items.filter(item => item.completed === true);
+
+      case FILTER_ACTIVE:
+        return items.filter(item => item.completed !== true);
+
+      default:
+        return items;
+    }
+  }
+
+  /**
+   * Change filter by status.
+   *
+   * @param {String} status
+   */
+  changeFilter = (status) => {
+    this.setState({ filter: status });
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
-          <TodoList items={this.state.items} addNewTodo={this.addNewTodo} changeTodoStatus={this.changeTodoStatus} />
+          <TodoList
+            items={this.state.items}
+            filter={this.state.filter}
+            addNewTodo={this.addNewTodo}
+            filterTodos={this.filterTodos}
+            changeFilter={this.changeFilter}
+            changeTodoStatus={this.changeTodoStatus}
+          />
         </div>
       </div>
     );
