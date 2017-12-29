@@ -11,7 +11,7 @@ import TodoCount from './TodoCount';
  * @param {Object} props
  */
 const TodoList = (props) => {
-  const {items} = props;
+  const { items } = props;
   const count = items.length;
 
   return (
@@ -21,7 +21,7 @@ const TodoList = (props) => {
       <ul className="list-unstyled">
         {
           items && items.map(item =>
-            <TodoItem key={item.id} item={item} />
+            <TodoItem key={item.id} item={item} changeTodoStatus={props.changeTodoStatus} />
           )
         }
       </ul>

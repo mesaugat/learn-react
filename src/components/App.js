@@ -36,10 +36,30 @@ class App extends Component {
       const todo = {
         text,
         completed: false,
-        id: state.length + 1
+        id: state.items.length + 1
       };
 
-      return {items: [...state.items, todo]};
+      return { items: [...state.items, todo] };
+    })
+  }
+
+  /**
+   * Change todo completion status.
+   *
+   * @param {Number} todoId
+   * @param {Boolean} completed
+   */
+  changeTodoStatus = (todoId, completed) => {
+    this.setState(state => {
+      const items = state.items.map(item => {
+        if (item.id !== todoId) {
+          return item;
+        }
+
+        return { ...item, completed };
+      })
+
+      return { items };
     })
   }
 
@@ -47,7 +67,7 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          <TodoList items={this.state.items} addNewTodo={this.addNewTodo} />
+          <TodoList items={this.state.items} addNewTodo={this.addNewTodo} changeTodoStatus={this.changeTodoStatus} />
         </div>
       </div>
     );

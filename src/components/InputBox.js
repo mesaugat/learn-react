@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  * Input component to add a new todo.
  */
 class InputBox extends Component {
-  propTypes = {
+  static propTypes = {
     items: PropTypes.array,
     addNewTodo: PropTypes.func.isRequired
   }

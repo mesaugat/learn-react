@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -6,22 +6,28 @@ import PropTypes from 'prop-types';
  *
  * @param {Object} props
  */
-const TodoItem = (props) => {
-  const { item } = props;
+class TodoItem extends Component {
+  static propTypes = {
+    item: PropTypes.object.isRequired,
+    changeTodoStatus: PropTypes.func.isRequired
+  }
 
-  return (
-    <li key={item.id} className="ui-state-default">
-      <div className="checkbox">
-        <label>
-          <input type="checkbox" checked={item.completed}/>{item.text}
-        </label>
-      </div>
-    </li>
-  )
-}
+  handleChange = (event) => this.props.changeTodoStatus(this.props.item.id, event.target.checked);
 
-TodoItem.propTypes = {
-  item: PropTypes.object
+  render() {
+    const { item } = this.props;
+    const className = `todo-item ui-state-default ${item.completed === true ? 'completed' : 'pending'}`;
+
+    return (
+      <li key={item.id} className={className}>
+        <div className="checkbox">
+          <label>
+            <input type="checkbox" onChange={this.handleChange} checked={item.completed} /> {item.text}
+          </label>
+        </div>
+      </li>
+    )
+  }
 }
 
 export default TodoItem;
