@@ -1,9 +1,10 @@
 import React from 'react';
+import TodoList from './TodoList.js';
 
 /**
- * Map items from an array to HTML.
+ * App component.
  */
-function App() {
+const App = () => {
   const items = [
     {
       id: 1,
@@ -25,22 +26,7 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <div className="todolist">
-          <h1>Todos</h1>
-          <ul className="list-unstyled">
-            {
-              items && items.map(item =>
-                <li key={item.id} className="ui-state-default">
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" checked={item.completed}/>{item.text}
-                    </label>
-                  </div>
-                </li>
-              )
-            }
-          </ul>
-        </div>
+        <TodoList items={items} />
       </div>
     </div>
   );
