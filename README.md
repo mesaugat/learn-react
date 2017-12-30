@@ -65,4 +65,4 @@ git clone git@github.com:mesaugat/learn-react.git
 
 ---
 
-HTML/CSS and guide format have been inherited from [kabirbaidhya/react-todo-app](https://github.com/kabirbaidhya/react-todo-app).
+This guide is heavily inspired from [kabirbaidhya/react-todo-app](https://github.com/kabirbaidhya/react-todo-app).
