@@ -2,7 +2,9 @@
 
 A step-by-step guide to learn React and it's fundamentals.
 
-Yes, yet another todo app. [Demo](https://mesaugat.github.io/learn-react/)
+Yes, yet another todo app.
+
+[Demo](https://mesaugat.github.io/learn-react/)
 
 ## Prerequisites
 
@@ -53,7 +55,7 @@ git clone git@github.com:mesaugat/learn-react.git
 * [step-8](https://github.com/mesaugat/learn-react/compare/step-7...step-8) - Make App component stateful
 * [step-9](https://github.com/mesaugat/learn-react/compare/step-8...step-9) - Add prop types validation
 * [step-10](https://github.com/mesaugat/learn-react/compare/step-9...step-10) - Make a controlled input component
-* [step-11](https://github.com/mesaugat/learn-react/compare/step-10...step-11) - Add event handler to change todo satushandlers
+* [step-11](https://github.com/mesaugat/learn-react/compare/step-10...step-11) - Add event handler to change todo status
 * [step-12](https://github.com/mesaugat/learn-react/compare/step-11...step-12) - Add a new component TodoFilter and it's event handlers
 * [step-13](https://github.com/mesaugat/learn-react/compare/step-12...step-13) - Make HTTP request to fetch notes
 * [step-14](https://github.com/mesaugat/learn-react/compare/step-13...step-14) - Deploy app
