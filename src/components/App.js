@@ -94,14 +94,16 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          <TodoList
-            items={this.state.items}
-            filter={this.state.filter}
-            addNewTodo={this.addNewTodo}
-            filterTodos={this.filterTodos}
-            changeFilter={this.changeFilter}
-            changeTodoStatus={this.changeTodoStatus}
-          />
+          <div className="col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <TodoList
+              items={this.state.items}
+              filter={this.state.filter}
+              addNewTodo={this.addNewTodo}
+              filterTodos={this.filterTodos}
+              changeFilter={this.changeFilter}
+              changeTodoStatus={this.changeTodoStatus}
+            />
+          </div>
         </div>
       </div>
     );
