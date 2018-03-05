@@ -61,6 +61,15 @@ git clone git@github.com:mesaugat/learn-react.git
 * [step-14](https://github.com/mesaugat/learn-react/compare/step-13...step-14) - Deploy app
 * [step-15](https://github.com/mesaugat/learn-react/compare/step-14...step-15) - Finalize
 
+## Resources
+
+* [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+* [Components](https://reactjs.org/docs/react-component.html)
+* [JSX in Depth](https://reactjs.org/docs/jsx-in-depth.html)
+* [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
+* [The Beginner's Guide to ReactJS - Free Video Tutorial](https://egghead.io/courses/the-beginner-s-guide-to-reactjs)
+* [React FAQ](https://reactfaq.site/)
+
 ## License
 
 [MIT](LICENSE)
